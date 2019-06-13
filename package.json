@@ -26,6 +26,10 @@
   },
   "homepage": "https://github.com/AbdulmajeedAlOmari/movlex-api#readme",
   "dependencies": {
+    "debug": "^4.1.1",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.1"
   }
 }
