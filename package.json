@@ -1,0 +1,31 @@
+{
+  "name": "movlex-api",
+  "version": "1.0.0",
+  "description": "An API that provides all functionality needed to give a random movie based on a user's preferences.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbdulmajeedAlOmari/movlex-api.git"
+  },
+  "keywords": [
+    "Movie",
+    "Randomizer",
+    "Random",
+    "Suggestion",
+    "Node",
+    "Javascript",
+    "Recommender"
+  ],
+  "author": "Abdulmajeed Alomari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AbdulmajeedAlOmari/movlex-api/issues"
+  },
+  "homepage": "https://github.com/AbdulmajeedAlOmari/movlex-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
