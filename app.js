@@ -1,7 +1,13 @@
 const express = require('express')
 const app = express()
+const mongoose = require('mongoose')
 const startupDebugger = require('debug')('app:startup')
+
 const port = process.env.port || 3000
+
+// ===================
+// Connect to Database
+mongoose.connect('mongodb://localhost/movlex', { useNewUrlParser: true })
 
 // ===============
 // Defining routes
