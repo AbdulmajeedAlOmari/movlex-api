@@ -27,7 +27,9 @@
   "homepage": "https://github.com/AbdulmajeedAlOmari/movlex-api#readme",
   "dependencies": {
     "debug": "^4.1.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.6.0",
+    "mongoose-dateonly": "^1.0.6"
   },
   "devDependencies": {
     "morgan": "^1.9.1"
