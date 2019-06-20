@@ -1,19 +1,19 @@
 const express = require('express')
 const app = express()
-const mainDebugger = require('debug')('app:main')
+const startupDebugger = require('debug')('app:startup')
 const port = process.env.port || 3000
 
 // ===============
 // Defining routes
-// const moviesRoute = require('./routes/movies')
+const moviesRoute = require('./routes/movies')
 
-mainDebugger('Defined all routes.')
+startupDebugger('Defined all routes.')
 
 // =================================
 // Setting up middlewares and config
 app.use(express.json())
 
-mainDebugger('Configured application.')
+startupDebugger('Configured application.')
 
 // =============================
 // Development environment setup
@@ -24,9 +24,12 @@ if(app.get('env') !== 'production') {
   // Use morgan package with 'tiny' setting, to show needed request headers.
   app.use(morgan('tiny'))
 
-  mainDebugger('Finished development environment setup.')
+  startupDebugger('Finished development environment setup.')
 }
 
+// ======
+// Routes
 app.get('/', (req, res) => res.send('Hello World!'))
+app.use('/movies', moviesRoute)
 
-app.listen(port, () => mainDebugger(`Movlex API is listening on port ${port}!`))
+app.listen(port, () => startupDebugger(`Movlex API is listening on port ${port}!`))
