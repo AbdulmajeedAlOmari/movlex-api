@@ -14,14 +14,12 @@ router.get('/', async (req, res) => {
 })
 
 // Give a random movie
-router.get('/random', (req, res) => {
-  // if(movies.length === 0) {
-  //   return res.status(400).send('No movies were found.')
-  // }
+router.get('/random', async (req, res) => {
+  const totalDocuments = await Movie.count()
+  const randomIndex = Math.random() * totalDocuments
+  const randomMovie = await Movie.find({}).limit(1).skip(randomIndex)
 
-  // const randomIndex = Math.round(Math.random() * (movies.length - 1))
-  // debug('randomIndex: ' + randomIndex)
-  res.send('Under maintenance.')
+  res.send(randomMovie)
 })
 
 router.post('/', async (req, res) => {
